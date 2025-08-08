@@ -1,0 +1,36 @@
+---
+const { title = "Cicihere", description = "" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header style="padding: 1rem; background: #f7f7f7; border-bottom: 1px solid #ddd;">
+      <nav style="display: flex; justify-content: space-between; align-items: center;">
+        <a href="/" style="font-weight: bold; font-size: 1.2rem;">Cicihere</a>
+        <div style="display: flex; gap: 1rem;">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/blog">Blog</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main content -->
+    <main style="padding: 2rem;">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer style="padding: 1rem; background: #f7f7f7; border-top: 1px solid #ddd; text-align: center;">
+      <p>© 2025 Cicihere. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
